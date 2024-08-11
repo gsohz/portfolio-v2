@@ -16,7 +16,7 @@ export function ALinkNav({
   return (
     <a
       href={href}
-      className={`flex p-1 h-full items-center ${
+      className={`relative h-full flex items-center ${
         section === currentSection
           ? "border-b-4 border-solid border-primary text-primary font-bold"
           : ""

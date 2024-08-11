@@ -10,7 +10,7 @@ export function ALink({ children, href }: ALinkProps) {
     <a
       href={href}
       target="_blank"
-      className="flex items-center gap-1 border-solid border-2 border-black py-2 px-4 rounded-lg cursor-pointer hover:bg-primary hover:text-white hover:border-black/0 shadow-lg"
+      className="flex items-center gap-1 outline outline-2 outline-black py-2 px-4 rounded-lg cursor-pointer hover:bg-[linear-gradient(45deg,_var(--tw-gradient-stops))] from-cyanStart to-cyanEnd hover:text-white hover:outline-none  shadow-lg transition-colors duration-300"
     >
       {children}
     </a>

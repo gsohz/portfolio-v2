@@ -81,7 +81,7 @@ function App() {
             <div className="absolute left-0 w-full h-96 bg-secondary flex translate-y-16 shadow-lg">
               <div className="relative flex flex-col md:flex-row w-full justify-center items-center md:justify-around gap-7 md:px-12">
                 <p className="max-w-[25rem] flex flex-col justify-center items-center md:items-start ">
-                  <span className="font-montserrat font-bold text-white text-center md:text-start text-4xl text-wrap md:text-7xl">
+                  <span className="font-montserrat font-bold text-white text-center md:text-start text-4xl text-wrap md:text-6xl">
                     ENTRE EM CONTATO
                   </span>
                   <span>e faça seu orçamento.</span>

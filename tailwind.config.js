@@ -14,6 +14,8 @@ export default {
         white: "#F2F2F2",
         black: "#1F1F1F",
         gray: "#A8A8A8",
+        cyanStart: "hsla(197, 100%, 44%, 1)",
+        cyanEnd: "hsla(173, 78%, 65%, 1)",
       },
     },
   },
