@@ -40,7 +40,7 @@ function App() {
                 Eu sou Gabriel, um desenvolvedor de sites.
               </span>
               <a
-                href="#contato"
+                href="#contatoAncora"
                 className="text-2xl xl:text-3xl text-primary font-bold flex items-center gap-1 hover:text-secondary"
               >
                 Entre em contato
