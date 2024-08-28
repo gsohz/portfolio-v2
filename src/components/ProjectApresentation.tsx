@@ -26,9 +26,19 @@ export function ProjectApresentation(project: Project) {
         viewport={{ once: true }}
         className="w-full xl:hidden md:px-8 pb-8 md:text-lg text-gray"
       >
-        <div>
+        <div className="flex flex-col gap-4">
           <p>{project.description}</p>
-          <a href="">Teste</a>
+          {project.link ? (
+            <a
+              href={project.link}
+              target="_blank"
+              className="font-medium text-primary hover:text-secondary hover:cursor-pointer flex items-center gap-1"
+            >
+              Confira o projeto <ArrowRight size={24} />
+            </a>
+          ) : (
+            ""
+          )}
         </div>
       </motion.div>
       <div className="flex items-center gap-3">
