@@ -12,7 +12,7 @@ import {
 import { Heading } from "./components/Heading";
 import Card from "./components/Card";
 import services from "./mocks/services";
-import projects from "./mocks/projects";
+import projects, { Project } from "./mocks/projects";
 import { ProjectApresentation } from "./components/ProjectApresentation";
 import { ALink } from "./components/ALink";
 import { motion } from "framer-motion";
@@ -24,6 +24,18 @@ function App() {
     useState<number>(0.3);
   const divServiceRef = useRef(null);
 
+  function orderProjects(projects: Project[]): Project[] {
+    return projects.sort((a, b) => {
+      if (a.category === "website" && b.category !== "website") {
+        return -1; // a deve vir antes de b
+      }
+      if (a.category === "sistema" && b.category !== "sistema") {
+        return 1; // b deve vir antes de a
+      }
+      return 0;
+    });
+  }
+
   useEffect(() => {
     if (divServiceRef.current) {
       const computedStyle = getComputedStyle(divServiceRef.current);
@@ -32,6 +44,8 @@ function App() {
 
       setResponsiveValueServiceDelay(animationDelay);
     }
+
+    orderProjects(projects);
   }, []);
 
   return (

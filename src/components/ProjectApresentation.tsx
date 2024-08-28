@@ -1,6 +1,7 @@
 import { fadeIn } from "../frame-variants";
 import { Project } from "../mocks/projects";
 import { motion } from "framer-motion";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export function ProjectApresentation(project: Project) {
   return (
@@ -14,7 +15,7 @@ export function ProjectApresentation(project: Project) {
         >
           <span className="font-montserrat font-bold text-xl md:text-2xl text-primary">
             {"> "}
-            {project.title.toUpperCase()}
+            {project.category.toUpperCase()} {project.title.toUpperCase()}
           </span>
         </motion.div>
       </div>
@@ -25,7 +26,10 @@ export function ProjectApresentation(project: Project) {
         viewport={{ once: true }}
         className="w-full xl:hidden md:px-8 pb-8 md:text-lg text-gray"
       >
-        <p>{project.description}</p>
+        <div>
+          <p>{project.description}</p>
+          <a href="">Teste</a>
+        </div>
       </motion.div>
       <div className="flex items-center gap-3">
         <motion.div
@@ -46,9 +50,20 @@ export function ProjectApresentation(project: Project) {
           whileInView="show"
           viewport={{ once: true }}
         >
-          <p className="max-w-96 hidden xl:block px-8 font-bold text-lg text-gray">
-            {project.description}
-          </p>
+          <div className="max-w-96 hidden xl:flex xl:flex-col xl:gap-6 px-8 font-bold text-lg text-gray">
+            <p>{project.description}</p>
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                className="font-medium text-primary hover:text-secondary hover:cursor-pointer flex items-center gap-1"
+              >
+                Confira o projeto <ArrowRight size={24} />
+              </a>
+            ) : (
+              ""
+            )}
+          </div>
         </motion.div>
       </div>
     </div>
